@@ -35,16 +35,14 @@ window#waybar.chromium {
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -1px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 10px;
-    padding-left: 3px;
-    padding-right:3px;
-    padding-top:0;
-    margin-right:3px;
-    margin-left:3px;
-    padding-bottom: 0;
+    padding: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -55,7 +53,7 @@ button:hover {
 #workspaces {
   border-radius: 10px;
   background-color: #363a4f;
-  padding: 4px;
+  padding:2px;
 }
 
 #workspaces button {
@@ -70,6 +68,8 @@ button:hover {
 #workspaces button.active {
     color: #181926;
     background-color: #b7bdf8;
+    padding-right: 14px;
+    padding-left: 14px;
 }
 
 
@@ -153,6 +153,7 @@ label:focus {
 
 #memory {
     background-color: #45475a;
+    margin-right: 10px;
 }
 
 #disk {

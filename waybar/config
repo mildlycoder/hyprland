@@ -2,7 +2,11 @@
     "height": 33, // Waybar height (to be removed for auto height)
     "spacing": 8, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock", "memory" ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+    },
+    "modules-right": ["pulseaudio", "tray", "backlight", "network", "battery", "clock", "memory"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -17,10 +21,14 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M %p}"
-    },
+    "interval": 60,
+    "format": "{:%I:%M %p}",           // Default format to display time
+    "format-alt": "{:%A, %dth %B %Y}", // Alternate format to show day, date, month, and year
+    "tooltip": true,                   // Enable tooltip on hover
+    "tooltip-format": "{:%Y-%m-%d}",   // Show full date on hover
+    "on-click": "toggle"               // Toggles between format and format-alt
+},
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
@@ -59,12 +67,12 @@
         "bat": "BAT2"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
